@@ -8,27 +8,19 @@
  <body>
   <div class="container" id="app">
     <h3 class="text-center">Cryptocurrency Pricing</h3>
-    <div class="columns medium-4" >
-      <div class="card">
-        <div class="card-section">
-          <p> BTC in USD  </p>
-        </div>
-        <div class="card-divider">
-          {{BTCinUSD}}
-        </div>
-      </div>
-    </div>
-
-    <div class="columns medium-4" >
-      <div class="card">
-        <div class="card-section">
-          <p> BTC in EURO  </p>
-        </div>
-        <div class="card-divider">
-          {{BTCinEURO}}
+    <div class="columns medium-4" v-for="(result, index) in results">
+        <div class="card">
+          <div class="card-section">
+            <p> {{ index }} </p>
+          </div>
+          <div class="card-divider">
+            <p>$ {{ result.USD }}</p>
+          </div>
+          <div class="card-section">
+            <p> &#8364 {{ result.EUR }}</p>
+          </div>
         </div>
       </div>
-    </div>
   </div>
  </body>
 
